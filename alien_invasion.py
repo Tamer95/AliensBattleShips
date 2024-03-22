@@ -1,8 +1,8 @@
-import sys
 import pygame
-from settings_alien import Settings
-from gun import Gun
-from game_functions import check_events as gf
+from settings_alien import Settings # настройки корабля, цвет фона и т.д
+from gun import Gun # сам карабль
+from game_functions import check_events as gf # тут проверка экрана на события
+from game_functions import update_screen  # тут постоянное обновление экрана
 
 
 def run_game():
@@ -15,15 +15,11 @@ def run_game():
 
     # Запуск основного цикла
     while True:
-        gf.check_events()
-        # Отслеживание событий клавиатуры и мыши
-        # for event in pygame.event.get():  # отслеживает движение пользователя по экрану (клавиатура, мышь)
-        #     if event.type == pygame.QUIT:  # если пользователь нажал красный крестик на углу экрана то, выход
-        #         sys.exit()
+        gf(gun)
+        gun.update()
+        update_screen(ai_settings, screen, gun)
 
-        # screen.fill(ai_settings.bg_color)
-        pygame.display.flip()  # flip() отобразит последний отрисованый экран со стиранием старого
-        gun.blit()
+
 
 
 run_game()
