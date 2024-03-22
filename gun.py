@@ -11,6 +11,6 @@ class Gun:
         self.rect.centerx = self.screen_rect.centerx  # координаты пушки
         self.rect.bottom = self.screen_rect.bottom  # координаты низа пушки
 
-    def output(self):
+    def blit(self):
         """рисуем пушку"""
         self.screen.blit(self.image, self.rect)  # метот blit() отрисовывает то есть  всегда обновляет экран
