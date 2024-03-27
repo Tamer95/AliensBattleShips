@@ -19,8 +19,10 @@ class Gun:
         if self.moving_right:
             # переместить корабль по одному позицию вправо
             self.rect.centerx += 1
-        if self.moving_left:
+        elif self.moving_left:
             self.rect.centerx -= 1
+
+
 
     def blit(self):
         """рисуем пушку"""

@@ -12,14 +12,15 @@ def check_events(gun):
             if event.key == pygame.K_RIGHT:
                 gun.moving_right = True
 
-        elif event.type == pygame.KEYDOWN:
+        if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
                 gun.moving_left = True
-        elif event.type == pygame.KEYUP:
+
+        if event.type == pygame.KEYUP:
             if event.key == pygame.K_RIGHT:
                 gun.moving_right = False
 
-        elif event.type == pygame.KEYUP:
+        if event.type == pygame.KEYUP:
             if event.key == pygame.K_LEFT:
                 gun.moving_left = False
 
